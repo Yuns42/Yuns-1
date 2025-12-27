@@ -1,0 +1,23 @@
+server:
+  port: 8080 # 后端端口
+
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/canteen_evaluation?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root # 你的MySQL用户名
+    password: 001205 # 你的MySQL密码
+
+
+# MyBatis-Plus配置（需手动加依赖）
+mybatis-plus:
+  # MyBatis配置
+    mapper-locations: classpath:mapper/*.xml # Mapper文件路径
+    type-aliases-package: imau.edc.canteenevaluationbackend.entity # 实体类包名
+    configuration:
+      map-underscore-to-camel-case: true # 下划线转驼峰
+
+    global-config:
+      db-config:
+        id-type: auto # 主键自增
